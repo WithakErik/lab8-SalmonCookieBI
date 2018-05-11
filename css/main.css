@@ -3,15 +3,18 @@
     0% {
         /* transform: rotate(0deg); */
         background-position-x: 0;
-    } 50% {
+    } 60% {
         /* transform: rotate(15deg); */
-        background-position-y: -13%;
+        background-position-y: -30%;
         background-position-x: 250px;
     } 100% {
         /* transform: rotate(0deg); */
         background-position-x: 500px;
     }
+
 }
+
+
 
 @keyframes water-bounce {
     from {
@@ -33,11 +36,41 @@
     from {
         text-shadow: 0 0 0 white;
     } to {
-        text-shadow: 0 -33px 69px white;
+        text-shadow: 0 -33px 69px steelblue;
+    }
+}
+
+@keyframes slideIn {
+    from {
+      background-position-x: 500px;
+    }
+  
+    to {
+      background-position-x: 0%;
     }
 }
 
 /* STYLING */
+
+html {
+    background-color: steelblue;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: rgba(0,0,0,0);
+    font-size: 4rem;
+    animation: title-glow 3s ease-in alternate infinite;
+}
+
+hr {
+    color: #F67280;
+    z-index: 9;
+
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -52,9 +85,21 @@ body {
     margin: 33px auto;
 }
 
-h1 {
+a {
+    display: inline;
+    text-decoration: none;
+    border: 1px solid white;
+    background: steelblue;
     color: white;
-    animation: title-glow 3s alternate infinite;
+    border-radius: 3px;
+    padding: 3px;
+    width: auto;
+    font-size: 2rem;
+}
+
+a:hover {
+    background: blue;
+    animation: body-water 1s alternate infinite;
 }
 
 #container-new {
@@ -72,34 +117,57 @@ input {
     margin: 0 2px;
 }
 
+#upates {
+    position: grid;
+    margin: auto;
+}
+
 #randomize-btn {
     background: blue;
     color: white;
-    animation: body-water 6s alternate infinite;
+    animation: body-water 13s alternate infinite;
+    margin: auto;
     cursor: help;
+}
+
+#randomize-btn:hover {
+    background: blue;
+    animation: none;
 }
 
 table {
     text-align: left;
     border-collapse: collapse;
     border: 1px solid white;
-    background: rgba(0, 0, 0, 0);
+    background: #090089;
+    margin: 13px 0 13px 0;
     color: white;
+    animation: body-water 6s alternate infinite;
 }
 
 #header, #body-total {
-    background: rgb(0, 0, 100);
+    background: #011F3F;
     font-weight: bold;
+    color: #F67280;
 }
 
 #body-data {
     animation: body-water 3s alternate infinite;
 }
 
+/* hover color */
+#body-data td:hover {
+    background-color: #429ffd;
+    font-weight: bold;
+    cursor: url("../assets/sal.cur"), crosshair;
+}
+
 #footer #body-times{
     background: black;
     color: white;
     font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    
 }
 
 tr {
@@ -112,11 +180,24 @@ table td {
     border-right: 1px solid white;
 }
 
+/* SALMON SHIZZ */
 #salmon {
     position: absolute;
     /* display: block; */
     width: 100%;
     height: 100%;
-    background: url('../images/bg-salmon.png');
+    background: url('../images/salmon.png');
     animation: salmon-swim 30s linear infinite;
+    z-index: 10;
+}
+
+/* COFFEE SHIZZ */
+#coffee {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/Cup-o-coffee-simple.png');
+    animation: slideIn 15s linear infinite;
+    z-index: 8;
+    background-repeat: repeat;
 }
