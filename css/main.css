@@ -1,20 +1,17 @@
 /* ANIMATIONS brah*/
 @keyframes salmon-swim {
     0% {
-        /* transform: rotate(0deg); */
+        /* transform: rotate(-15deg); */
         background-position-x: 0;
     } 60% {
-        /* transform: rotate(15deg); */
+        /* transform: rotate(0deg); */
         background-position-y: -30%;
         background-position-x: 250px;
     } 100% {
-        /* transform: rotate(0deg); */
+        /* transform: rotate(-15deg); */
         background-position-x: 500px;
     }
-
 }
-
-
 
 @keyframes water-bounce {
     from {
@@ -26,9 +23,9 @@
 
 @keyframes body-water {
     from {
-        background: blue;
+        background: steelblue;
     } to {
-        background: rgba(74, 71, 255, .50);
+        background: rgba(1, 31, 163, .50);
     }
 }
 
@@ -41,12 +38,12 @@
 }
 
 @keyframes slideIn {
-    from {
-      background-position-x: 500px;
+    0% {
+      background-position-x: 0px;
     }
   
-    to {
-      background-position-x: 0%;
+    100% {
+      background-position-x: -500px;
     }
 }
 
@@ -55,6 +52,8 @@
 html {
     background-color: steelblue;
     font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -62,59 +61,55 @@ h1 {
     font-weight: bold;
     color: rgba(0,0,0,0);
     font-size: 4rem;
+    margin: 0;
     animation: title-glow 3s ease-in alternate infinite;
-}
-
-hr {
-    color: #F67280;
-    z-index: 9;
-
 }
 
 body {
     padding: 0;
     margin: 0;
-    background-image: url('../images/background.jpg');
-    animation: water-bounce 5s alternate ease-in-out infinite;
 }
 
 #container-main {
     display: grid;
     text-align: center;
     justify-content: center;
-    margin: 33px auto;
+    margin: auto;
 }
 
-a {
+.btn-link {
     display: inline;
     text-decoration: none;
     border: 1px solid white;
-    background: steelblue;
+    background: #011F3F;
     color: white;
     border-radius: 3px;
     padding: 3px;
-    width: auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
-a:hover {
-    background: blue;
-    animation: body-water 1s alternate infinite;
-}
-
-#container-new {
-    font-size: 2rem;
-    background: black;
-    color: white;
-    border: 1px solid white;
-    padding: 13px;
-    margin: auto;
-    align-items: stretch;
+.btn-link:hover {
+    background: steelblue;
 }
 
 input {
-    font-size: 2rem;
-    margin: 0 2px;
+    font-size: 1.5em;
+}
+
+#updates {
+    display: flex;
+    padding: 13px;
+    justify-content: space-between;
+    border: 1px solid white;
+    background: rgb(117, 51, 57);
+    color: white;
+    font-weight: bold;
+}
+
+#txt {
+    font-size: 1.5rem;
+    width: 169px;
+    margin: 0 13px 0 0;
 }
 
 #upates {
@@ -122,16 +117,15 @@ input {
     margin: auto;
 }
 
-#randomize-btn {
-    background: blue;
+#randomize-btn, #submit {
+    background: #011F3F;
     color: white;
-    animation: body-water 13s alternate infinite;
     margin: auto;
     cursor: help;
 }
 
-#randomize-btn:hover {
-    background: blue;
+#randomize-btn:hover, #submit:hover {
+    background: steelblue;
     animation: none;
 }
 
@@ -139,10 +133,8 @@ table {
     text-align: left;
     border-collapse: collapse;
     border: 1px solid white;
-    background: #090089;
-    margin: 13px 0 13px 0;
+    margin: 13px 0 0 0;
     color: white;
-    animation: body-water 6s alternate infinite;
 }
 
 #header, #body-total {
@@ -152,13 +144,12 @@ table {
 }
 
 #body-data {
-    animation: body-water 3s alternate infinite;
+    animation: body-water 13s ease-in alternate infinite;
 }
 
 /* hover color */
 #body-data td:hover {
     background-color: #429ffd;
-    font-weight: bold;
     cursor: url("../assets/sal.cur"), crosshair;
 }
 
@@ -183,12 +174,12 @@ table td {
 /* SALMON SHIZZ */
 #salmon {
     position: absolute;
-    /* display: block; */
     width: 100%;
     height: 100%;
+    margin: 0;
     background: url('../images/salmon.png');
-    animation: salmon-swim 30s linear infinite;
-    z-index: 10;
+    animation: salmon-swim 10s linear infinite;
+    z-index: -1;
 }
 
 /* COFFEE SHIZZ */
@@ -196,8 +187,15 @@ table td {
     position: absolute;
     width: 100%;
     height: 100%;
+    margin: 0;
     background: url('../images/Cup-o-coffee-simple.png');
-    animation: slideIn 15s linear infinite;
-    z-index: 8;
-    background-repeat: repeat;
+    animation: slideIn 20s linear infinite;
+    z-index: -1;
 }
+
+/* hover color */
+#table-data td:hover {
+    background-color: #429FFD;
+    font-weight: bold;
+
+  }
